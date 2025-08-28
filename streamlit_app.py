@@ -21,8 +21,8 @@ else:
 
     resp = client.chat.completions.create(
     model="gpt-4o-mini",
-    messages=[{"role": "user", "content": "Hello, are you alive?"}]
-)
+    messages=[{"role": "user", "content": "Hello, are you alive?"}])
+
 
     print(resp.choices[0].message.content)
     
