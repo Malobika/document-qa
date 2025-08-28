@@ -19,13 +19,12 @@ else:
     # Create an OpenAI client.
     client = OpenAI(api_key=openai_api_key)
 
-    simple_check = client.chat.completions.create(
-        model="gpt-4.1",
-        messages=[{"role":"user","Content":"Are you alive"}],
+    resp = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello, are you alive?"}]
+)
 
-    )
-    print(simple_check.choices[0].message.content)
-
+    print(resp.choices[0].message.content)
     
 
     # Let the user upload a file via `st.file_uploader`.
