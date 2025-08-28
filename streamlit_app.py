@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Show title and description.
-st.title("📄 Document question answering")
+st.title("📄  My Document question answering")
 st.write(
     "Upload a document below and ask a question about it – GPT will answer! "
     "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
@@ -18,6 +18,15 @@ else:
 
     # Create an OpenAI client.
     client = OpenAI(api_key=openai_api_key)
+
+    simple_check = client.chat.completions.create(
+        model="gpt-4.1",
+        messages=[{"role":"user","Content":"Are you alive"}],
+
+    )
+    print(simple_check.choices[0].message.content)
+
+    
 
     # Let the user upload a file via `st.file_uploader`.
     uploaded_file = st.file_uploader(
