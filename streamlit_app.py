@@ -8,6 +8,24 @@ st.write(
     "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
 )
 
+
+st.set_page_config(
+    page_title= "My Title",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={ 'get Help': 'https://dbdmg.polito.it/',
+                'Report a bug': "https://dbdmg.polito.it",
+                'About': "# *Intro to datbases* course"
+
+    }
+)
+
+
+
+
+
+
+
 # Ask user for their OpenAI API key via `st.text_input`.
 # Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
 # via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
